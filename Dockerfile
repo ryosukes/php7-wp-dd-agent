@@ -47,7 +47,7 @@ RUN mkdir -p $NVM_DIR \
 RUN usermod -a -G root www-data
 
 # Increase upload size limit to 4 MB
-COPY docker/build/assets/uploads.ini /usr/local/etc/php/conf.d/uploads.ini
+COPY ./upload_limit.ini /usr/local/etc/php/conf.d/uploads.ini
 
 # Install New Relic PHP agent
 RUN echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' | tee /etc/apt/sources.list.d/newrelic.list \
