@@ -114,9 +114,9 @@ RUN pecl install xdebug-2.9.1 \
 # datadog php tracer
 
 RUN set -ex \
-  && curl -Lo datadog-php-tracer.apk https://github.com/DataDog/dd-trace-php/releases/download/0.47.0/datadog-php-tracer_0.47.0_noarch.apk \
-  && apk add --no-cache datadog-php-tracer.apk --allow-untrusted \
-  && rm datadog-php-tracer.apk
+  && curl -Lo datadog-php-tracer.deb https://github.com/DataDog/dd-trace-php/releases/download/0.47.0/datadog-php-tracer_0.47.0_amd64.deb \
+  && dpkg -i datadog-php-tracer.deb \
+  && rm datadog-php-tracer.deb
 
 RUN set -ex \
     && . "$APACHE_ENVVARS" \
